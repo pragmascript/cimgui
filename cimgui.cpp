@@ -6,6 +6,8 @@
 
 #include "./imgui/imgui_internal.h"
 
+#include "cimgui_additions.h"
+
 CIMGUI_API ImVec2* ImVec2_ImVec2(void)
 {
     return IM_NEW(ImVec2)();
@@ -2345,6 +2347,7 @@ CIMGUI_API void igGetMousePos_nonUDT(ImVec2 *pOut)
 {
     *pOut = ImGui::GetMousePos();
 }
+
 CIMGUI_API ImVec2_Simple igGetMousePos_nonUDT2()
 {
     ImVec2 ret = ImGui::GetMousePos();
@@ -2361,6 +2364,9 @@ CIMGUI_API ImVec2_Simple igGetMousePosOnOpeningCurrentPopup_nonUDT2()
     ImVec2_Simple ret2 = ImVec2ToSimple(ret);
     return ret2;
 }
+
+
+
 CIMGUI_API void igGetMouseDragDelta_nonUDT(ImVec2 *pOut,int button,float lock_threshold)
 {
     *pOut = ImGui::GetMouseDragDelta(button,lock_threshold);
